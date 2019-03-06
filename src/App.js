@@ -1,16 +1,24 @@
 import React, {Component} from 'react';
 import './App.scss';
-import TopNav from './components/top-nav/top-nav';
-import logo from './assets/logo.svg';
+import NoScrollHome from './components/no-scroll-home/no-scroll-home';
 
 class App extends Component {
+  componentDidMount() {
+    this.lastScroll = 0;
+    window.addEventListener('scroll', this.scrollHandler);
+  }
+
   render() {
     return (
       <div className="App">
-        <TopNav/>
-        <img src={logo} alt="Logo"/>
+        <NoScrollHome/>
       </div>
     );
+  }
+
+  scrollHandler() {
+    this.lastScroll = window.scrollY;
+    console.log(this.lastScroll);
   }
 }
 

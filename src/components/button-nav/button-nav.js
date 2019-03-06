@@ -4,7 +4,7 @@ import './button-nav.scss';
 class ButtonNav extends Component {
   render() {
     return (
-      <div className="ButtonNav">{this.props.children}</div>
+      <div className={this.props.className + " ButtonNav"}>{this.props.children}</div>
     );
   }
 }

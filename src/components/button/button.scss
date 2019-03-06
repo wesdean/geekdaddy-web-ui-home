@@ -1,0 +1,14 @@
+@import '../../scss/colors.scss';
+@import "../../scss/fonts";
+
+.Button {
+  border-radius: 4px;
+  background-color: $white;
+  padding: 16px 32px;
+  cursor: pointer;
+}
+
+.Button-text {
+  @include Text-Style;
+  color: $primary;
+}

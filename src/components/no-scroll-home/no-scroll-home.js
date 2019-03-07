@@ -9,9 +9,7 @@ class NoScrollHome extends Component {
     return (
       <div className="NoScrollHome" id="home">
         <TopNav/>
-        <div className="NoScrollHome-content">
-        <img className="NoScrollHome-logo" src={logo} alt="Logo"/>
-        </div>
+        <div className="NoScrollHome-content" style={{backgroundImage: `url(${logo})`}}>{'\u00A0'}</div>
         <Footer/>
       </div>
     );

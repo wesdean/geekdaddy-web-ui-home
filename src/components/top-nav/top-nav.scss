@@ -1,3 +1,11 @@
 .TopNav {
   width: 100%;
+
+  .Button {
+    display: flex;
+    flex: 1 0 auto;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
 }

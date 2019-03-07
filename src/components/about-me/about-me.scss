@@ -1,0 +1,47 @@
+@import "../../scss/sections";
+@import "../../scss/colors";
+
+.AboutMe {
+
+}
+
+.AboutMe-section-label {
+  @include section-label;
+}
+
+.AboutMe-content {
+  margin: 0 10px;
+}
+
+.AboutMe-social-networks {
+  margin: 20px 0 0 0;
+
+  a {
+    display: block;
+    text-decoration: none;
+    margin: 5px 10px;
+
+    &:first-child {
+      margin-top: 0;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  figure {
+    color: $charcoal-gray;
+    font-size: 24px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 0;
+  }
+
+  figcaption {
+    font-size: 11px;
+    margin-left: 6px;
+  }
+}

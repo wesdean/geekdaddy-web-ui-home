@@ -1,3 +1,5 @@
+@import "./colors";
+
 @mixin Text-Style() {
   font-family: Ubuntu, sans-serif;
   font-size: 11px;
@@ -6,6 +8,7 @@
   font-stretch: normal;
   line-height: 1.2;
   letter-spacing: normal;
+  color: $charcoal-gray;
 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

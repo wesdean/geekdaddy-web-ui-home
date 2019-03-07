@@ -7,11 +7,16 @@ class TopNav extends Component {
   render() {
     return (
       <ButtonNav className="TopNav">
-        <Button>Home</Button>
+        <Button onClick={this.homeClickHandler}>Home</Button>
         <Button>About Me</Button>
         <Button>Contact</Button>
       </ButtonNav>
     );
+  }
+
+  homeClickHandler = () => {
+    window.location.hash = '';
+    window.location.hash = '#home';
   }
 }
 

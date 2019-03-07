@@ -1,24 +1,35 @@
 import React, {Component} from 'react';
 import './App.scss';
 import NoScrollHome from './components/no-scroll-home/no-scroll-home';
+import ScrollHome from "./components/scroll-home/scroll-home";
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      scrollPosition: 0
+    };
+  }
+
   componentDidMount() {
-    this.lastScroll = 0;
     window.addEventListener('scroll', this.scrollHandler);
   }
 
   render() {
     return (
       <div className="App">
-        <NoScrollHome/>
+        {this.state.scrollPosition > 0 ?
+          <ScrollHome/>
+          :
+          <NoScrollHome/>
+        }
       </div>
     );
   }
 
-  scrollHandler() {
-    this.lastScroll = window.scrollY;
-    console.log(this.lastScroll);
+  scrollHandler = () => {
+    this.setState({scrollPosition: window.scrollY});
   }
 }
 

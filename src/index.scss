@@ -1,9 +1,16 @@
 @import "./scss/fonts";
+@import "./scss/colors";
 
 body {
   @include Text-Style;
   margin: 0;
   padding: 0;
+  height: 101vh;
+  background-color: $light-gray;
+}
+
+a, a:active, a:hover, a:visited {
+  color: $charcoal-gray;
 }
 
 code {

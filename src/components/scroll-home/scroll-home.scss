@@ -1,5 +1,19 @@
 .ScrollHome {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex: 1 0 auto;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
 
+.ScrollHome-content {
+  display: flex;
+  flex: 1 0 auto;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
 }
 
 .ScrollHome-spacer {

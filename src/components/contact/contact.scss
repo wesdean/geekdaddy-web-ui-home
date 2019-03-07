@@ -1,0 +1,18 @@
+@import "../../scss/sections";
+
+.Contact {
+
+}
+
+.Contact-section-label {
+  @include section-label;
+}
+
+.Contact-info {
+  font-size: 14px;
+  margin: 0 10px;
+
+  > div {
+    margin: 10px 0;
+  }
+}

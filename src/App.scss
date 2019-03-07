@@ -1,3 +1,6 @@
+@import "./scss/colors";
+
 .App {
-  height: 101vh;
+  height: 100vh;
+  background-color: $white;
 }

@@ -2,9 +2,24 @@ import React, {Component} from 'react';
 import './button.scss';
 
 class Button extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      isActive: props.isActive
+    };
+  }
+
   render() {
+    const classNames = ['Button'];
+    if (this.props.className) {
+      classNames.push(this.props.className);
+    }
+    if (this.props.isActive) {
+      classNames.push('active');
+    }
     return (
-      <div className="Button" onClick={this.props.onClick}>
+      <div className={classNames.join(' ')} onClick={this.props.onClick}>
         <div className="Button-text">{this.props.children}</div>
       </div>
     );

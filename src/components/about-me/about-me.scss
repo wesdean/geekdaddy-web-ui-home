@@ -44,3 +44,12 @@
     margin-left: 6px;
   }
 }
+
+/* Tablet landscape and wider */
+@media screen and (min-width: 1025px) {
+  .AboutMe-nav {
+    .AboutMe-skills-button {
+      display: none;
+    }
+  }
+}

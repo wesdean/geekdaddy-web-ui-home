@@ -7,6 +7,14 @@
   padding: 16px 32px;
   margin: 0 5px;
   cursor: pointer;
+
+  &.active {
+    background-color: $primary;
+
+    .Button-text {
+      color: $white;
+    }
+  }
 }
 
 .Button-text {

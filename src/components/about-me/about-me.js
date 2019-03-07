@@ -35,8 +35,8 @@ class AboutMe extends Component {
       <div className="AboutMe">
         <div className="AboutMe-section-label">About Me</div>
         <div className="AboutMe-content">{content}</div>
-        <ButtonNav>
-          <Button>Skills</Button>
+        <ButtonNav className="AboutMe-nav">
+          <Button className="AboutMe-skills-button">Skills</Button>
           <Button>My Apps</Button>
           <Button>Resumé</Button>
         </ButtonNav>

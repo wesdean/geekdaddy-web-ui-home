@@ -1,0 +1,9 @@
+@import "../../scss/sections";
+
+.Skills {
+  width: 100%;
+}
+
+.Skills-section-label {
+  @include section-label;
+}

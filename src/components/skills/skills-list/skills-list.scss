@@ -1,0 +1,15 @@
+.SkillsList {
+  margin: 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+
+  > .SkillsListItem {
+    margin: 0 10px 0 0;
+
+    :first-child {
+      margin-left: 0;
+    }
+  }
+}

@@ -20,3 +20,16 @@
   height: 20px;
   border: 0;
 }
+
+/* Narrower than tablet landscape */
+@media screen and (max-width: 1024px) {
+  .ScrollHome-skills-spacer {
+    display: none;
+  }
+
+  .ScrollHome-content {
+    > .Skills {
+      display: none;
+    }
+  }
+}

@@ -2,7 +2,7 @@
 @import "../../scss/colors";
 
 .AboutMe {
-
+  width: 100%;
 }
 
 .AboutMe-section-label {
@@ -45,11 +45,32 @@
   }
 }
 
+.AboutMe-alt {
+  display: none;
+}
+
+.AboutMe-main {
+  display: block;
+}
+
 /* Tablet landscape and wider */
 @media screen and (min-width: 1025px) {
+  .AboutMe {
+    .SkillsNav {
+      display: none;
+    }
+  }
   .AboutMe-nav {
     .AboutMe-skills-button {
       display: none;
     }
+  }
+
+  .AboutMe-alt {
+    display: block;
+  }
+
+  .AboutMe-main {
+    display: none;
   }
 }

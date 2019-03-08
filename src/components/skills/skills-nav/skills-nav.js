@@ -4,18 +4,9 @@ import Button from "../../button/button";
 import './skills-nav.scss';
 
 class SkillsNav extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      selectedSkill: props.selectedSkill,
-      changeSkillHandler: props.changeSkillHandler
-    };
-  }
-
   render() {
     return (
-      <ButtonNav className="SkillsNav" active={this.state.selectedSkill} onClick={this.skillChanged.bind(this)}>
+      <ButtonNav className="SkillsNav" active={this.props.selectedSkill} onClick={this.skillChanged}>
         <Button name="languages">Languages</Button>
         <Button name="frameworks">Frameworks</Button>
         <Button name="libraries">Libraries/APIs</Button>
@@ -27,10 +18,8 @@ class SkillsNav extends Component {
   }
 
   skillChanged = (skillName) => {
-    this.setState({selectedSkill: skillName});
-
-    if (typeof this.state.changeSkillHandler === 'function') {
-      this.state.changeSkillHandler(skillName);
+    if (typeof this.props.changeSkillHandler === 'function') {
+      this.props.changeSkillHandler(skillName);
     }
   }
 }

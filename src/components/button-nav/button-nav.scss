@@ -2,19 +2,22 @@
 
 .ButtonNav {
   display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
+  max-width: 100vw;
 
   border-radius: 4px;
   background-color: $pale-gray;
-  padding: 6px 10px;
-  box-sizing: border-box;
 
   .Button {
     display: flex;
-    flex: 1 0 auto;
+    flex: 1 0 0;
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    margin: 6px 5px;
+    box-sizing: border-box;
   }
 }

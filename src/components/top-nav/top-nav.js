@@ -7,16 +7,17 @@ class TopNav extends Component {
   render() {
     return (
       <ButtonNav className="TopNav">
-        <Button onClick={this.homeClickHandler}>Home</Button>
-        <Button>About Me</Button>
-        <Button>Contact</Button>
+        <Button onClick={this.clickHandler.bind(this, 'home')}>Home</Button>
+        <Button onClick={this.clickHandler.bind(this, 'about-me')}>About Me</Button>
+        <Button onClick={this.clickHandler.bind(this, 'contact')}>Contact</Button>
       </ButtonNav>
     );
   }
 
-  homeClickHandler = () => {
-    window.location.hash = '';
-    window.location.hash = '#home';
+  clickHandler = (id) => {
+    const el = document.getElementById(id);
+    console.log(el);
+    el.scrollIntoView(true);
   }
 }
 

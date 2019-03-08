@@ -11,13 +11,13 @@ class Footer extends Component {
             <ul>
               <li><a href="#home">Home</a></li>
               <li>
-                <a href=""><label>About Me</label></a>
+                <a href="#about-me"><label>About Me</label></a>
                 <ul>
                   <li><a href="">My Apps</a></li>
                   <li><a href="">Resumé</a></li>
                 </ul>
               </li>
-              <li><a href="">Contact</a></li>
+              <li><a href="#contact">Contact</a></li>
             </ul>
           </div>
           <div className="Footer-contact">

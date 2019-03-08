@@ -1,6 +1,8 @@
 @import "./scss/colors";
 
 .App {
-  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  flex: 1 0 auto;
   background-color: $white;
 }

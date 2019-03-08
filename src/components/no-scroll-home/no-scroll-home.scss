@@ -5,6 +5,11 @@
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
+  overflow: hidden;
+
+  &.hide {
+    height: 1px;
+  }
 }
 
 .NoScrollHome-content {

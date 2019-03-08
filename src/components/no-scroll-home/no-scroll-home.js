@@ -6,8 +6,13 @@ import Footer from "../footer/footer";
 
 class NoScrollHome extends Component {
   render() {
+    const classNames = ['NoScrollHome'];
+    if (window.scrollY > 0) {
+      classNames.push('hide');
+    }
+
     return (
-      <div className="NoScrollHome" id="home">
+      <div className={classNames.join(' ')} id="home">
         <TopNav/>
         <div className="NoScrollHome-content" style={{backgroundImage: `url(${logo})`}}>{'\u00A0'}</div>
         <Footer/>

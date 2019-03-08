@@ -6,16 +6,23 @@ import Contact from "../contact/contact";
 import Skills from "../skills/skills";
 
 class ScrollHome extends Component {
-  render() {
-    const selectedSkill = this.props.selectedSkill ? this.props.selectedSkill : 'languages';
+  constructor(props) {
+    super(props);
 
+    this.state = {
+      selectedSkill: props.selectedSkill ? props.selectedSkill : 'languages'
+    };
+  }
+
+
+  render() {
     return (
       <div className="ScrollHome">
         <hr className="ScrollHome-spacer"/>
         <div className="ScrollHome-content">
-          <AboutMe/>
+          <AboutMe selectedSkill={this.state.selectedSkill} onSelectedSkillChanged={this.onSelectedSkillChanged}/>
           <hr className="ScrollHome-spacer"/>
-          <Skills selectedSkill={selectedSkill}/>
+          <Skills selectedSkill={this.state.selectedSkill} onSelectedSkillChanged={this.onSelectedSkillChanged}/>
           <hr className="ScrollHome-spacer ScrollHome-skills-spacer"/>
           <Contact/>
         </div>
@@ -23,6 +30,10 @@ class ScrollHome extends Component {
         <Footer/>
       </div>
     );
+  }
+
+  onSelectedSkillChanged = (skillName) => {
+    this.setState({selectedSkill: skillName});
   }
 }
 

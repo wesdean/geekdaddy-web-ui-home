@@ -8,7 +8,7 @@ class App extends Component {
     super(props);
 
     this.state = {
-      scrollPosition: 0
+      scrollY: 0
     };
   }
 
@@ -19,17 +19,14 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        {this.state.scrollPosition > 0 ?
-          <ScrollHome/>
-          :
-          <NoScrollHome/>
-        }
+        <NoScrollHome/>
+        <ScrollHome/>
       </div>
     );
   }
 
   scrollHandler = () => {
-    this.setState({scrollPosition: window.scrollY});
+    this.setState({scrollY: window.scrollY});
   }
 }
 

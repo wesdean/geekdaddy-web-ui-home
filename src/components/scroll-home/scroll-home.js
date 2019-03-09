@@ -42,7 +42,7 @@ class ScrollHome extends Component {
   }
 
   onSelectedSkillChanged = (skillName) => {
-    this.setState({selectedSkill: skillName});
+    this.setState({selectedSkill: skillName, selectedSkillItem: null});
   };
 
   onSelectedSkillItemChanged = (itemName) => {

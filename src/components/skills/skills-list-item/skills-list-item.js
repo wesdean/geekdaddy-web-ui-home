@@ -4,6 +4,10 @@ import './skill-list-item.scss';
 
 class SkillsListItem extends Component {
   render() {
+    if (!this.props.skill) {
+      return null;
+    }
+
     const classNames = ['SkillsListItem'];
     if (this.props.className) {
       classNames.push(this.props.className);
@@ -16,19 +20,22 @@ class SkillsListItem extends Component {
     }
 
     return (
-      <div className={classNames.join(' ')} title={this.props.name}>
+      <div className={classNames.join(' ')} title={this.props.skill.name}>
+        <figure>
         {(() => {
-          switch (this.props.iconType) {
+          switch (this.props.skill.iconType) {
             case 'fa':
-              return <FontAwesomeIcon className="icon" icon={this.props.icon}
-                                      onClick={this.clickHandler.bind(this, this.props.name)}/>;
+              return <FontAwesomeIcon className="icon" icon={this.props.skill.icon}
+                                      onClick={this.clickHandler.bind(this, this.props.skill.name)}/>;
             case 'image':
-              return <img className="icon" src={this.props.icon} alt={this.props.name}
-                          onClick={this.clickHandler.bind(this, this.props.name)}/>;
+              return <img className="icon" src={this.props.skill.icon} alt={this.props.skill.name}
+                          onClick={this.clickHandler.bind(this, this.props.skill.name)}/>;
             default:
               return <div/>
           }
         })()}
+          <figcaption>{this.props.skill.description}</figcaption>
+        </figure>
       </div>
     );
   }

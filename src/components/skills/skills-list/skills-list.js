@@ -11,9 +11,7 @@ class SkillsList extends Component {
     if (Array.isArray(selectedSkills)) {
       selectedSkills.forEach((skill, index) => {
         children.push(<SkillsListItem
-          name={skill.name}
-          icon={skill.icon}
-          iconType={skill.iconType}
+          skill={skill}
           key={index}
           onClick={this.selectItem}
           active={this.props.selectedSkillItem === skill.name}

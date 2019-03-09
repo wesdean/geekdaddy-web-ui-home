@@ -10,7 +10,8 @@ class ScrollHome extends Component {
     super(props);
 
     this.state = {
-      selectedSkill: props.selectedSkill ? props.selectedSkill : 'languages'
+      selectedSkill: props.selectedSkill ? props.selectedSkill : 'languages',
+      selectedSkillItem: props.selectedSkillItem ? props.selectedSkillItem : null
     };
   }
 
@@ -20,9 +21,17 @@ class ScrollHome extends Component {
       <div className="ScrollHome">
         <hr className="ScrollHome-spacer"/>
         <div className="ScrollHome-content">
-          <AboutMe selectedSkill={this.state.selectedSkill} onSelectedSkillChanged={this.onSelectedSkillChanged}/>
+          <AboutMe
+            selectedSkill={this.state.selectedSkill}
+            selectedSkillItem={this.state.selectedSkillItem}
+            onSelectedSkillChanged={this.onSelectedSkillChanged}
+            onSelectedSkillItemChanged={this.onSelectedSkillItemChanged}/>
           <hr className="ScrollHome-spacer"/>
-          <Skills selectedSkill={this.state.selectedSkill} onSelectedSkillChanged={this.onSelectedSkillChanged}/>
+          <Skills
+            selectedSkill={this.state.selectedSkill}
+            selectedSkillItem={this.state.selectedSkillItem}
+            onSelectedSkillChanged={this.onSelectedSkillChanged}
+            onSelectedSkillItemChanged={this.onSelectedSkillItemChanged}/>
           <hr className="ScrollHome-spacer ScrollHome-skills-spacer"/>
           <Contact/>
         </div>
@@ -34,6 +43,13 @@ class ScrollHome extends Component {
 
   onSelectedSkillChanged = (skillName) => {
     this.setState({selectedSkill: skillName});
+  };
+
+  onSelectedSkillItemChanged = (itemName) => {
+    if (itemName === this.state.selectedSkillItem) {
+      itemName = null;
+    }
+    this.setState({selectedSkillItem: itemName});
   }
 }
 

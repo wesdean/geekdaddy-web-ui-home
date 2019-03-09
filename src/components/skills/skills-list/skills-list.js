@@ -1,14 +1,23 @@
 import React, {Component} from 'react';
 import SkillsListItem from "../skills-list-item/skills-list-item";
 import './skills-list.scss';
+import skills from '../../../data/skills';
 
 class SkillsList extends Component {
   render() {
     const children = [];
+    const selectedSkills = skills[this.props.selectedSkill];
 
-    if (Array.isArray(this.props.skills)) {
-      this.props.skills.forEach((skill, index) => {
-        children.push(<SkillsListItem name={skill.name} icon={skill.icon} iconType={skill.iconType} key={index}/>)
+    if (Array.isArray(selectedSkills)) {
+      selectedSkills.forEach((skill, index) => {
+        children.push(<SkillsListItem
+          name={skill.name}
+          icon={skill.icon}
+          iconType={skill.iconType}
+          key={index}
+          onClick={this.selectItem}
+          active={this.props.selectedSkillItem === skill.name}
+          hidden={this.props.selectedSkillItem && this.props.selectedSkillItem !== skill.name}/>)
       });
     }
 
@@ -18,6 +27,12 @@ class SkillsList extends Component {
       </div>
     );
   }
+
+  selectItem = (itemName) => {
+    if (typeof this.props.onSkillItemSelected === 'function') {
+      this.props.onSkillItemSelected(itemName);
+    }
+  };
 }
 
 export default SkillsList;

@@ -6,7 +6,6 @@ import {faFacebook, faGithub, faLinkedin, faStackExchange} from '@fortawesome/fr
 import SocialNetworkLink from "./social-network-link";
 import SkillsNav from "../skills/skills-nav/skills-nav";
 import SkillsList from "../skills/skills-list/skills-list";
-import skills from "../../data/skills";
 
 class AboutMe extends Component {
   constructor(props) {
@@ -22,7 +21,10 @@ class AboutMe extends Component {
     switch (this.state.selectedAboutMe) {
       case 'skills':
         label = 'Skills';
-        content = <SkillsList skills={skills[this.props.selectedSkill]}/>;
+        content = <SkillsList
+          selectedSkill={this.props.selectedSkill}
+          selectedSkillItem={this.props.selectedSkillItem}
+          onSkillItemSelected={this.props.onSelectedSkillItemChanged}/>;
         break;
       default:
         label = 'About Me';
@@ -113,7 +115,8 @@ class AboutMe extends Component {
         </div>
         {(() => {
           if (this.state.selectedAboutMe === 'skills') {
-            return <SkillsNav selectedSkill={this.props.selectedSkill} changeSkillHandler={this.changeSelectedSkill}/>
+            return <SkillsNav selectedSkill={this.props.selectedSkill}
+                              changeSkillHandler={this.props.onSelectedSkillChanged}/>
           }
         })()}
         <ButtonNav className="AboutMe-nav" active={this.state.selectedAboutMe} onClick={this.buttonNavHandler}
@@ -134,12 +137,6 @@ class AboutMe extends Component {
 
   buttonNavHandler = (buttonName) => {
     this.setState({selectedAboutMe: buttonName});
-  };
-
-  changeSelectedSkill = (skillName) => {
-    if (typeof this.props.onSelectedSkillChanged === 'function') {
-      this.props.onSelectedSkillChanged(skillName);
-    }
   };
 }
 

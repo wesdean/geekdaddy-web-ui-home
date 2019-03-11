@@ -55,7 +55,11 @@ class ScrollHome extends Component {
   }
 
   onSelectedAboutMeChanged = (selectedAboutMe) => {
-    this.props.history.push('/@#' + selectedAboutMe);
+    if (selectedAboutMe) {
+      this.props.history.push('/@#' + selectedAboutMe);
+    } else {
+      this.goToHash(window.location.hash);
+    }
   };
 
   onSelectedSkillChanged = (skillName) => {
@@ -125,7 +129,7 @@ class ScrollHome extends Component {
       let top = el.getBoundingClientRect().top;
       if (topNav) {
         const topNavRect = topNav.getBoundingClientRect();
-        top += topNavRect.top + topNavRect.height;
+        top -= topNavRect.top + topNavRect.height;
       }
       console.log(top, el);
       window.scrollTo({top: top, behavior: 'smooth'});

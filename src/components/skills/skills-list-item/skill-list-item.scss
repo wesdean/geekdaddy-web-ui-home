@@ -1,7 +1,6 @@
 @import "../../../scss/colors";
 
 .SkillsListItem {
-  font-size: 24px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -13,10 +12,12 @@
     figcaption {
       display: none;
       white-space: pre-wrap;
+      margin-top: 5px;
     }
   }
 
   .icon {
+    font-size: 24px;
     width: 24px;
     height: 24px;
     padding: 3px;

@@ -95,8 +95,14 @@ class ScrollHome extends Component {
         break;
     }
 
-    if (this.scrollTo(id)) {
-      return;
+    switch (id) {
+      case 'skills':
+        if (this.scrollTo(id)) {
+          return;
+        }
+        break;
+      default:
+        break;
     }
 
     switch (id) {
@@ -116,10 +122,12 @@ class ScrollHome extends Component {
     const el = document.getElementById(id);
     if (el && el.offsetParent !== null) {
       const topNav = document.getElementById('top-nav');
-      let top = el.offsetTop;
+      let top = el.getBoundingClientRect().top;
       if (topNav) {
-        top -= topNav.offsetTop + topNav.offsetHeight;
+        const topNavRect = topNav.getBoundingClientRect();
+        top += topNavRect.top + topNavRect.height;
       }
+      console.log(top, el);
       window.scrollTo({top: top, behavior: 'smooth'});
       return true;
     }

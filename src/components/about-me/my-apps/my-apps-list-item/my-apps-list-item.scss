@@ -1,0 +1,52 @@
+.MyAppsListItem {
+  margin-top: 10px;
+
+  &:first-child {
+    margin-top: 0;
+  }
+}
+
+.MyAppsListItem-title {
+  font-size: 16px;
+  font-weight: bold;
+
+  &, a {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  .icon {
+    height: 24px;
+    margin-right: 10px;
+  }
+}
+
+.MyAppsListItem-content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.MyAppsListItem-brief {
+  margin: 3px 0 0 10px;
+  display: flex;
+  flex: 1 0 0;
+}
+
+.MyAppsListItem-description-toggle {
+  margin-left: 10px;
+  display: flex;
+  flex: 0 1 0;
+}
+
+.MyAppsListItem-description {
+  display: none;
+  margin-top: 5px;
+
+  &.show {
+    display: block;
+  }
+}

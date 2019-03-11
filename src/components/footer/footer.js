@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import './footer.scss';
+import {Link} from 'react-router-dom';
 
 class Footer extends Component {
   render() {
@@ -9,15 +10,16 @@ class Footer extends Component {
           <div className="Footer-site-map">
             <label>Site Map</label>
             <ul>
-              <li><a href="#home">Home</a></li>
+              <li><Link to="/home">Home</Link></li>
               <li>
-                <a href="#about-me"><label>About Me</label></a>
+                <Link to="/@#about-me"><label>About Me</label></Link>
                 <ul>
-                  <li><a href="">My Apps</a></li>
-                  <li><a href="">Resumé</a></li>
+                  <li><Link to="/@#skills">Skills</Link></li>
+                  <li><Link to="/@#my-apps">My Apps</Link></li>
+                  <li><Link to="/@#resume">Resumé</Link></li>
                 </ul>
               </li>
-              <li><a href="#contact">Contact</a></li>
+              <li><Link to="/@#contact">Contact</Link></li>
             </ul>
           </div>
           <div className="Footer-contact">

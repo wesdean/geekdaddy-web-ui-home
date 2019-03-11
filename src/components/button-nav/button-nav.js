@@ -15,7 +15,7 @@ class ButtonNav extends Component {
       children.push(this.modifyChild(this.props.children))
     }
     return (
-      <div className={`ButtonNav${className}`}>{children}</div>
+      <div className={`ButtonNav${className}`} id={this.props.id}>{children}</div>
     );
   }
 

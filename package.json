@@ -27,6 +27,7 @@
     "@fortawesome/free-brands-svg-icons": "^5.7.2",
     "@fortawesome/pro-light-svg-icons": "^5.7.2",
     "@fortawesome/react-fontawesome": "^0.1.4",
-    "node-sass": "^4.11.0"
+    "node-sass": "^4.11.0",
+    "react-router-dom": "^4.3.1"
   }
 }

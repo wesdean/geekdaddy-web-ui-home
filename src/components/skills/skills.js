@@ -6,7 +6,7 @@ import SkillsList from "./skills-list/skills-list";
 class Skills extends Component {
   render() {
     return (
-      <div className="Skills">
+      <div className="Skills" id="skills">
         <div className="Skills-section-label">Skills</div>
         <SkillsNav selectedSkill={this.props.selectedSkill} changeSkillHandler={this.props.onSelectedSkillChanged}/>
         <SkillsList

@@ -6,25 +6,22 @@ import {faFacebook, faGithub, faLinkedin, faStackExchange} from '@fortawesome/fr
 import SocialNetworkLink from "./social-network-link";
 import SkillsNav from "../skills/skills-nav/skills-nav";
 import SkillsList from "../skills/skills-list/skills-list";
+import MyApps from "./my-apps/my-apps";
 
 class AboutMe extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      selectedAboutMe: null
-    };
-  }
-
   render() {
     let content, label, altContent, altLabel;
-    switch (this.state.selectedAboutMe) {
+    switch (this.props.selectedAboutMe) {
       case 'skills':
         label = 'Skills';
         content = <SkillsList
           selectedSkill={this.props.selectedSkill}
           selectedSkillItem={this.props.selectedSkillItem}
           onSkillItemSelected={this.props.onSelectedSkillItemChanged}/>;
+        break;
+      case 'my-apps':
+        label = 'My Apps';
+        content = <MyApps/>;
         break;
       default:
         label = 'About Me';
@@ -62,7 +59,7 @@ class AboutMe extends Component {
         break;
     }
 
-    switch (this.state.selectedAboutMe) {
+    switch (this.props.selectedAboutMe) {
       case 'skills':
         altLabel = 'About Me';
         altContent = (
@@ -114,12 +111,12 @@ class AboutMe extends Component {
           <div className="AboutMe-content">{altContent}</div>
         </div>
         {(() => {
-          if (this.state.selectedAboutMe === 'skills') {
+          if (this.props.selectedAboutMe === 'skills') {
             return <SkillsNav selectedSkill={this.props.selectedSkill}
                               changeSkillHandler={this.props.onSelectedSkillChanged}/>
           }
         })()}
-        <ButtonNav className="AboutMe-nav" active={this.state.selectedAboutMe} onClick={this.buttonNavHandler}
+        <ButtonNav className="AboutMe-nav" active={this.props.selectedAboutMe} onClick={this.buttonNavHandler}
                    toggle={true}>
           <Button name="skills" className="AboutMe-skills-button">Skills</Button>
           <Button name="my-apps">My Apps</Button>
@@ -136,7 +133,9 @@ class AboutMe extends Component {
   }
 
   buttonNavHandler = (buttonName) => {
-    this.setState({selectedAboutMe: buttonName});
+    if (typeof this.props.onSelectedChanged === 'function') {
+      this.props.onSelectedChanged(buttonName);
+    }
   };
 }
 

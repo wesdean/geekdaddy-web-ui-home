@@ -19,11 +19,11 @@ class ScrollHome extends Component {
   }
 
   componentDidMount() {
-    this.goToHash(window.location.hash);
+    this.goToHash(this.props.location.hash);
   }
 
   componentDidUpdate() {
-    this.goToHash(window.location.hash);
+    this.goToHash(this.props.location.hash);
   }
 
   render() {
@@ -58,7 +58,7 @@ class ScrollHome extends Component {
     if (selectedAboutMe) {
       this.props.history.push('/@#' + selectedAboutMe);
     } else {
-      this.goToHash(window.location.hash);
+      this.goToHash(this.props.location.hash);
     }
   };
 

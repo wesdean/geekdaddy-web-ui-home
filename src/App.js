@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import './App.scss';
-import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+import {HashRouter as Router, Route, Switch} from 'react-router-dom';
 import NoScrollHome from './components/no-scroll-home/no-scroll-home';
 import ScrollHome from "./components/scroll-home/scroll-home";
 

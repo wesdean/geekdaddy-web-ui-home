@@ -9,12 +9,11 @@ class NoScrollHome extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      scrollY: 0
+      redirect: false
     }
   }
 
   componentDidMount() {
-    window.scrollY = 0;
     window.addEventListener('scroll', this.scrollHandler);
   }
 
@@ -24,7 +23,7 @@ class NoScrollHome extends Component {
 
   render() {
     const classNames = ['NoScrollHome'];
-    if (this.state.scrollY > 0) {
+    if (this.state.redirect) {
       return <Redirect to="/@"/>;
     }
 
@@ -38,7 +37,7 @@ class NoScrollHome extends Component {
   }
 
   scrollHandler = () => {
-    this.setState({scrollY: window.scrollY});
+    this.setState({redirect: true});
   };
 }
 

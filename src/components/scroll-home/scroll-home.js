@@ -11,6 +11,8 @@ class ScrollHome extends Component {
   constructor(props) {
     super(props);
 
+    this.currentHash = null;
+
     this.state = {
       selectedAboutMe: props.selectedAboutMe,
       selectedSkill: props.selectedSkill ? props.selectedSkill : 'languages',
@@ -74,6 +76,11 @@ class ScrollHome extends Component {
   };
 
   goToHash = (hash) => {
+    if (hash === this.currentHash) {
+      return;
+    }
+    this.currentHash = hash;
+
     hash = hash.substring(1).split('&');
     let id = hash[0];
     let hashProps = {};

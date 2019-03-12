@@ -131,7 +131,6 @@ class ScrollHome extends Component {
         const topNavRect = topNav.getBoundingClientRect();
         top -= topNavRect.top + topNavRect.height;
       }
-      console.log(top, el);
       window.scrollTo({top: top, behavior: 'smooth'});
       return true;
     }

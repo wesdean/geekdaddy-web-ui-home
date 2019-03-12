@@ -8,6 +8,7 @@ import SkillsNav from "../skills/skills-nav/skills-nav";
 import SkillsList from "../skills/skills-list/skills-list";
 import MyApps from "./my-apps/my-apps";
 import aboutMeContent from '../../data/about-me';
+import Resume from "./resume/resume";
 
 class AboutMe extends Component {
   render() {
@@ -23,6 +24,10 @@ class AboutMe extends Component {
       case 'my-apps':
         label = 'My Apps';
         content = <MyApps/>;
+        break;
+      case 'resume':
+        label = 'Resumé';
+        content = <Resume/>;
         break;
       default:
         label = 'About Me';

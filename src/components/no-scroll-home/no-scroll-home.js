@@ -3,7 +3,6 @@ import TopNav from "../top-nav/top-nav";
 import logo from "../../assets/logo.svg";
 import './no-scroll-home.scss';
 import Footer from "../footer/footer";
-import {Redirect} from 'react-router-dom';
 
 class NoScrollHome extends Component {
   constructor(props) {
@@ -24,7 +23,7 @@ class NoScrollHome extends Component {
   render() {
     const classNames = ['NoScrollHome'];
     if (this.state.redirect) {
-      return <Redirect to="/@"/>;
+      // return <Redirect to="/@"/>;
     }
 
     return (

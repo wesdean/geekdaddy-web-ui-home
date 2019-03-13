@@ -34,7 +34,10 @@ class SkillsListItem extends Component {
               return <div/>
           }
         })()}
-          <figcaption>{this.props.skill.description}</figcaption>
+          <figcaption>
+            <p>{this.props.skill.name}</p>
+            <p>{this.props.skill.description}</p>
+          </figcaption>
         </figure>
       </div>
     );

@@ -10,13 +10,18 @@ class TopNav extends Component {
       <ButtonNav className="TopNav" id="top-nav">
         <Button onClick={this.clickHandler.bind(this, '/home')}>Home</Button>
         <Button onClick={this.clickHandler.bind(this, '/@#about-me')}>About Me</Button>
+        <Button onClick={this.clickHandler.bind(this, 'https://gddprojects.blogspot.com')}>Blog</Button>
         <Button onClick={this.clickHandler.bind(this, '/@#contact')}>Contact</Button>
       </ButtonNav>
     );
   }
 
   clickHandler = (path) => {
-    this.props.history.push(path);
+    if (path.match(/^http/)) {
+      window.open(path, 'blog');
+    } else {
+      this.props.history.push(path);
+    }
   }
 }
 
